@@ -58,11 +58,16 @@
                         </div>
     
                         <div id="chat_users">
-                            <div class="single_user d-flex align-items-center p-2">
-                                <img src="./img/avatar_1.jpg" class="icon mx-3">
-                                <div>
-                                    Nome<br>
-                                    <span class="min_text">Ultimo messaggio inviato</span>
+                            <div v-for="(contact, index) in contacts" :key="index" class="single_user d-flex align-items-center p-2">
+                                <div class="col-11 d-flex align-items-center">
+                                    <img :src="contact.avatar" class="icon mx-3">
+                                    <div>
+                                        {{ contact.name }}<br>
+                                        <span class="min_text">Ultimo messaggio inviato</span>
+                                    </div>
+                                </div>
+                                <div class="col-1">
+                                    <span class="min_text text-end">12:00</span>
                                 </div>
                             </div>
                         </div>

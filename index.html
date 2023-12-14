@@ -12,6 +12,108 @@
 
 <body>
 
+    <main>
+        <div id="app">
+
+            <div class="container container_app my-5">
+                <div class="row">
+    
+                    <!-- --- SIDEBAR ----  -->
+    
+                    <div class="col-4 p-0 d-flex flex-column border_grey bg-white" style="height:700px">
+    
+                        <div class="user_profile d-flex justify-content-between align-items-center p-2">
+                            <div class="">
+                                <img src="./img/avatar_io.jpg" class="icon me-2"> 
+                                Melissa
+                            </div>
+                            <div class="icons">
+                                <ul class="list-unstyled">
+                                    <li class="d-inline px-1"><i class="fa-solid fa-circle-notch"></i></li>
+                                    <li class="d-inline px-1"><i class="fa-solid fa-message"></i></li>
+                                    <li class="d-inline px-1"><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div class="p-2 py-3 blue_not d-flex align-items-center">
+                            <div class="mx-2 not_icon d-inline-block">
+                                <i class="fa-solid fa-bell-slash" style="color: #90deff;"></i>
+                            </div>
+                            <div class="d-inline-block">
+                                Ricevi notifiche di nuovi messaggi<br>
+                                <span class="min_text"><u>Attiva notifiche desktop</u></span>
+                            </div>
+                        </div>
+    
+                        <div id="searchbar">
+                            <div class="p-2 d-flex">
+                                <div class="col-2 d-inline-block align-self-center text-center">
+                                    <i class="fa-solid fa-magnifying-glass" style="color:#b3b3b3"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="d-inline-block">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div id="chat_users">
+                            <div class="single_user d-flex align-items-center p-2">
+                                <img src="./img/avatar_1.jpg" class="icon mx-3">
+                                <div>
+                                    Nome<br>
+                                    <span class="min_text">Ultimo messaggio inviato</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <!-- ----- CHAT ------  -->
+                    <div class="col-8 bg-success p-0 d-flex flex-column" style="height:700px"> 
+    
+                        <div class="user_profile d-flex justify-content-between align-items-center p-2">
+                            <div class="d-flex align-items-center">
+                                <img src="./img/avatar_1.jpg" class="icon me-2">
+                                <div>
+                                    Nome<br>
+                                    <span class="min_text">Ultimo accesso oggi alle xx</span>
+    
+                                </div>
+                            </div>
+                            <div class="icons">
+                                <ul class="list-unstyled">
+                                    <li class="d-inline px-1"><i class="fa-solid fa-magnifying-glass"></i></li>
+                                    <li class="d-inline px-1"><i class="fa-solid fa-paperclip"></i></li>
+                                    <li class="d-inline px-1"><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div id="chat" class="chat_container">
+    
+                        </div>
+    
+                        <div id="message" class="sendmessage_bar d-flex justify-content-between align-items-center">
+                            <div class="col-1 icon-1 text-center">
+                                <i class="fa-regular fa-face-smile" style="color:#b3b3b3"></i>
+                            </div>
+                            <div class="col-10 sidebar">
+                                <input type="text" name="" id="" placeholder="">
+                            </div>
+                            <div class="col-1 icon-2 text-center">
+                                <i class="fa-solid fa-microphone" style="color:#b3b3b3"></i>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>

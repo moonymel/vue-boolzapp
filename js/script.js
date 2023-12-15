@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
         activeChat: 0,
+        added_message: '',
       contacts: [
         {
           name: 'Michele',
@@ -173,7 +174,25 @@ createApp({
   methods:{
     clickChat(index){
         this.activeChat = index;
-    }
+    },
+
+    getLastMessage(index){
+      return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0,30) + '...';
+    },
+
+    getLastDate(index){
+      return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+    },
+
+    addMessage(index){
+      let newmessage = {
+          date: 'ora h:m',
+          text: this.added_message,
+          status: 'sent',
+      };
+      this.contacts[index].messages.push(newmessage);
+      this.added_message = '';
+  },
 
   }
 }).mount('#app')

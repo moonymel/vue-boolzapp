@@ -63,7 +63,7 @@
                                     <img :src="contact.avatar" class="icon mx-3">
                                     <div>
                                         {{ contact.name }}<br>
-                                        <span class="min_text">Ultimo messaggio inviato</span>
+                                        <span class="min_text">{{ getLastMessage(index) }}</span>
                                     </div>
                                 </div>
                                 <div class="col-1">
@@ -82,7 +82,9 @@
                                 <img :src="contacts[activeChat].avatar" class="icon me-2">
                                 <div>
                                     {{ contacts[activeChat].name }}<br>
-                                    <span class="min_text">Ultimo accesso oggi alle xx</span>
+                                    <span class="min_text">Ultimo accesso 
+                                        {{ getLastDate(activeChat) }}
+                                </span>
     
                                 </div>
                             </div>
@@ -109,7 +111,7 @@
                                 <i class="fa-regular fa-face-smile" style="color:#b3b3b3"></i>
                             </div>
                             <div class="col-10 sidebar">
-                                <input type="text" name="" id="" placeholder="">
+                                <input type="text" id="addemessage" placeholder="" v-model="added_message" @keyup.enter="addMessage(activeChat)">
                             </div>
                             <div class="col-1 icon-2 text-center">
                                 <i class="fa-solid fa-microphone" style="color:#b3b3b3"></i>

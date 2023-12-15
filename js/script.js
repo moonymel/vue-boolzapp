@@ -177,22 +177,36 @@ createApp({
     },
 
     getLastMessage(index){
-      return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0,30) + '...';
+      if(this.contacts[index].messages.length > 0){
+        return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0,30)+'...'
+      };
+      
     },
 
     getLastDate(index){
       return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
     },
 
+    automaticMessage(index){
+      let newautomatic = {
+        date: 'ora h:m',
+        message: 'Ok!',
+        status: 'received',
+      };
+      this.contacts[index].messages.push(newautomatic);
+    },
+
     addMessage(index){
       let newmessage = {
           date: 'ora h:m',
-          text: this.added_message,
+          message: this.added_message,
           status: 'sent',
       };
       this.contacts[index].messages.push(newmessage);
       this.added_message = '';
-  },
+
+      setTimeout(this.automaticMessage(index), 1000); 
+    },
 
   }
 }).mount('#app')

@@ -3,8 +3,9 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-        activeChat: 0,
-        added_message: '',
+      search: '',
+      activeChat: 0,
+      added_message: '',
       contacts: [
         {
           name: 'Michele',
@@ -187,9 +188,13 @@ createApp({
       return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
     },
 
+    getNowDate(){
+      return luxon.DateTime.local().toFormat('dd/MM/yyyy HH:mm:ss');
+    },
+
     automaticMessage(index){
       let newautomatic = {
-        date: 'ora h:m',
+        date: this.getNowDate(),
         message: 'Ok!',
         status: 'received',
       };
@@ -198,7 +203,7 @@ createApp({
 
     addMessage(index){
       let newmessage = {
-          date: 'ora h:m',
+          date: this.getNowDate(),
           message: this.added_message,
           status: 'sent',
       };
@@ -207,6 +212,19 @@ createApp({
 
       setTimeout(this.automaticMessage(index), 1000); 
     },
+
+    searchContact(){
+      this.contacts.forEach((contact) => {
+        console.log(this.contact.name);
+        console.log(this.contact.visible);
+        if(contact.name.toLowerCase().includes(this.search.toLowerCase())){
+          contact.visible = true;
+        }
+        else{
+          contact.visible = false;
+        }
+      })
+    }
 
   }
 }).mount('#app')

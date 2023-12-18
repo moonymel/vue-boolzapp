@@ -58,7 +58,7 @@
                         </div>
     
                         <div id="chat_users">
-                            <div v-for="(contact, index) in contacts" :key="index" class="single_user d-flex align-items-center p-2" @click="clickChat(index)" v-show="contact.visible">
+                            <div v-for="(contact, index) in contacts" :key="index" class="single_user align-items-center p-2" @click="clickChat(index)" v-show="contact.visible">
                                 <div class="col-11 d-flex align-items-center">
                                     <img :src="contact.avatar" class="icon mx-3">
                                     <div>

@@ -76,6 +76,7 @@ ul {
     font-weight:bold;
     line-height:13px;
     cursor:pointer;
+    display:flex;
 }
 
 /* CHAT */

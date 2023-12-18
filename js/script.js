@@ -210,13 +210,13 @@ createApp({
       this.contacts[index].messages.push(newmessage);
       this.added_message = '';
 
-      setTimeout(this.automaticMessage(index), 1000); 
+      setTimeout(() => {
+        this.automaticMessage(index);
+      }, 1000); 
     },
 
     searchContact(){
       this.contacts.forEach((contact) => {
-        console.log(this.contact.name);
-        console.log(this.contact.visible);
         if(contact.name.toLowerCase().includes(this.search.toLowerCase())){
           contact.visible = true;
         }
